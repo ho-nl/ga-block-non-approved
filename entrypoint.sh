@@ -14,7 +14,7 @@ main() {
        echo $(_jq '.name')
     done
 
-    echo $LABELS;
+    echo $labels;
 }
 
 main

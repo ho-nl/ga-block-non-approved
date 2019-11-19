@@ -4,6 +4,7 @@ set -o pipefail
 
 main() {
     approvedLabels=$INPUT_LABELS
+    echo ${approvedLabels}
     IFS=', ' read -r -a approvedLabels <<< "$approvedLabels"
 
     labels=$(jq -r .pull_request.labels "$GITHUB_EVENT_PATH")
@@ -16,6 +17,8 @@ main() {
         }
 
         label=$(_jq '.name')
+
+        echo ${label}
 
         if [[ " ${approvedLabels[@]} " =~ " ${label} " ]]; then
             flag=true

@@ -3,6 +3,9 @@ set -e
 set -o pipefail
 
 main() {
+    approvedLabels=$INPUT_LABELS
+    echo ${approvedLabels}
+
     labels=$(jq -r .pull_request.labels "$GITHUB_EVENT_PATH")
 #    labels=$(jq -r .pull_request.labels "test.json");
 
@@ -13,8 +16,6 @@ main() {
 
        echo $(_jq '.name')
     done
-
-    echo $labels;
 }
 
 main

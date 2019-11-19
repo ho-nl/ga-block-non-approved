@@ -3,7 +3,16 @@ set -e
 set -o pipefail
 
 main() {
-    jq --raw-output . "$GITHUB_EVENT_PATH"
+    labels=$(jq -r .pull_request.labels "$GITHUB_EVENT_PATH")
+#    labels=$(jq -r .pull_request.labels "test.json");
+
+    for row in $(echo "${labels}" | jq -r '.[] | @base64'); do
+        _jq() {
+         echo ${row} | base64 --decode | jq -r ${1}
+        }
+
+       echo $(_jq '.name')
+    done
 }
 
 main

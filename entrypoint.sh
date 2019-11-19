@@ -21,17 +21,17 @@ main() {
         echo ${label}
 
         if [[ " ${approvedLabels[@]} " =~ " ${label} " ]]; then
-            flag=true
+            approved=true
         fi
     done
 }
 
-if (! ${flag}); then
+if (! ${approved}); then
     echo 'Pull request is not approved'
     exit 1
 fi
 
-if (${flag}); then
+if (${approved}); then
     echo 'Pull request is approved, check successful'
 fi
 

@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 main() {
-    echo "$GITHUB_EVENT_PATH"
+    echo "this is a test"
 }
 
 main

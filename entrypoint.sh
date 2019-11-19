@@ -28,4 +28,8 @@ if (! ${flag}); then
     exit 1
 fi
 
+if (${flag}); then
+    echo 'Pull request is approved, check successful'
+fi
+
 main

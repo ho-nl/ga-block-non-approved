@@ -24,15 +24,15 @@ main() {
             approved=true
         fi
     done
+
+    if (! ${approved}); then
+        echo 'Pull request is not approved'
+        exit 1
+    fi
+
+    if (${approved}); then
+        echo 'Pull request is approved, check successful'
+    fi
 }
-
-if (! ${approved}); then
-    echo 'Pull request is not approved'
-    exit 1
-fi
-
-if (${approved}); then
-    echo 'Pull request is approved, check successful'
-fi
 
 main

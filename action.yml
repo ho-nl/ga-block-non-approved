@@ -3,9 +3,9 @@ name: 'Block Pull Request'
 description: 'Blocks merging non-approved pull requests'
 inputs:
   labels:
-    description: "Whitelist of labels which allow merging, default is ['approved']"
+    description: "Whitelist of labels (comma separated) which allow merging, default is 'approved,auto-merge'"
     required: false
-    default: ['approved','auto-merge']
+    default: 'approved,auto-merge'
 runs:
   using: 'docker'
   image: 'Dockerfile'

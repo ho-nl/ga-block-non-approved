@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 main() {
-    echo "this is a test"
+    jq --raw-output . "$GITHUB_EVENT_PATH"
 }
 
 main

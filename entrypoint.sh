@@ -13,6 +13,8 @@ main() {
 
        echo $(_jq '.name')
     done
+
+    echo $LABELS;
 }
 
 main

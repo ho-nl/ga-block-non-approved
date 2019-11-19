@@ -5,7 +5,7 @@ inputs:
   labels:
     description: "Whitelist of labels which allow merging, default is ['approved']"
     required: false
-    default: 'approved'
+    default: ['approved','auto-merge']
 runs:
   using: 'docker'
   image: 'Dockerfile'

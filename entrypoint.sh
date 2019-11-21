@@ -4,8 +4,8 @@ set -o pipefail
 
 main() {
 
-    jq --raw-output . "$GITHUB_EVENT_PATH"
-    exit 0
+#    jq --raw-output . "$GITHUB_EVENT_PATH"
+#    exit 0
 
     approvedLabels=$INPUT_LABELS
     echo ${approvedLabels}
